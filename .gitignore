@@ -1,0 +1,6 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/northwind/node_modules
+/paper-dashboard/node_modules
+/webpack/node_modules
