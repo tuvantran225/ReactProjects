@@ -1,0 +1,11 @@
+.table a.table-link.info {
+    color: #17a2b8;
+}
+
+.table a.table-link.warning {
+    color: #ffc107;
+}
+
+.table a.table-link.danger {
+    color: #dc3545;
+}

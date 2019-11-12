@@ -90,23 +90,10 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math */ \"./src/math.js\");\n\r\n\r\nconsole.log(Object(_math__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(1, 2));\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/math.js":
-/*!*********************!*\
-  !*** ./src/math.js ***!
-  \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return sum; });\nfunction sum(a, b) {\r\n    return a + b;\r\n}\n\n//# sourceURL=webpack:///./src/math.js?");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: Cannot find module '@babel/core'\\n babel-loader@8 requires Babel 7.x (the package '@babel/core'). If you'd like to use Babel 6.x ('babel-core'), you should install 'babel-loader@7'.\\n    at Function.Module._resolveFilename (module.js:548:15)\\n    at Function.Module._load (module.js:475:25)\\n    at Module.require (module.js:597:17)\\n    at require (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:161:20)\\n    at Object.<anonymous> (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:10:11)\\n    at Module._compile (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:192:30)\\n    at Object.Module._extensions..js (module.js:664:10)\\n    at Module.load (module.js:566:32)\\n    at tryModuleLoad (module.js:506:12)\\n    at Function.Module._load (module.js:498:3)\\n    at Module.require (module.js:597:17)\\n    at require (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:161:20)\\n    at loadLoader (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\loader-runner\\\\lib\\\\loadLoader.js:18:17)\\n    at iteratePitchingLoaders (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\loader-runner\\\\lib\\\\LoaderRunner.js:169:2)\\n    at runLoaders (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\loader-runner\\\\lib\\\\LoaderRunner.js:365:2)\\n    at NormalModule.doBuild (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\webpack\\\\lib\\\\NormalModule.js:295:3)\\n    at NormalModule.build (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\webpack\\\\lib\\\\NormalModule.js:446:15)\\n    at Compilation.buildModule (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\webpack\\\\lib\\\\Compilation.js:739:10)\\n    at moduleFactory.create (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\webpack\\\\lib\\\\Compilation.js:1111:12)\\n    at factory (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\webpack\\\\lib\\\\NormalModuleFactory.js:409:6)\\n    at hooks.afterResolve.callAsync (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\webpack\\\\lib\\\\NormalModuleFactory.js:155:13)\\n    at AsyncSeriesWaterfallHook.eval [as callAsync] (eval at create (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\tapable\\\\lib\\\\HookCodeFactory.js:33:10), <anonymous>:6:1)\\n    at AsyncSeriesWaterfallHook.lazyCompileHook (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\tapable\\\\lib\\\\Hook.js:154:20)\\n    at resolver (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\webpack\\\\lib\\\\NormalModuleFactory.js:138:29)\\n    at process.nextTick (D:\\\\Sources\\\\ReactProjects\\\\webpack\\\\node_modules\\\\webpack\\\\lib\\\\NormalModuleFactory.js:346:9)\\n    at _combinedTickCallback (internal/process/next_tick.js:132:7)\\n    at process._tickCallback (internal/process/next_tick.js:181:9)\");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
