@@ -41,7 +41,7 @@ class App extends Component {
         gender: 'FEMALE',
         discription: '',
         status: 'ACTIVE',
-        manager: false
+        manager: true
     };
   }
 
@@ -191,6 +191,7 @@ class App extends Component {
                                       <input 
                                           type="checkbox" 
                                           className="form-check-input" 
+                                          name="manager"
                                           onChange={this.changeValue}
                                           checked={this.state.manager} />
                                           Manager
