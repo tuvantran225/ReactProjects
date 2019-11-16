@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
 
 class EmployeeList extends Component {
 
   render() {
-    const body = this.props.employees.map((employee, index) => {
+    const { employees } = this.props.store;
+    const body = employees.map((employee, index) => {
       return (
         <tr key={index}>
         <td>{index + 1}</td>
@@ -60,4 +62,4 @@ class EmployeeList extends Component {
   }
 }
 
-export default EmployeeList;
+export default inject('store') (observer(EmployeeList));
