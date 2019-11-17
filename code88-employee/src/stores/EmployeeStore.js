@@ -1,5 +1,7 @@
-import { observable, action, decorate } from 'mobx';
+import { observable, action, decorate, computed } from 'mobx';
+import _ from 'lodash';
 import Employee from '../classes/Employee';
+import { DEPARTMENT, GENDER } from '../constants/EmployeeConstant';
 
 export default class EmployeeStore {
 
@@ -9,36 +11,58 @@ export default class EmployeeStore {
             employees = [
                 new Employee({
                     englishName: 'Frank', 
-                    vietnameseName: 'Tú'
+                    vietnameseName: 'Tú',
+                    department: DEPARTMENT.DEV,
+                    gender: GENDER.MALE
                 }),
                 new Employee({
                     englishName: 'Jeff', 
-                    vietnameseName: 'Khánh'
+                    vietnameseName: 'Khánh',
+                    department: DEPARTMENT.DEV,
+                    gender: GENDER.MALE
                 }),
                 new Employee({
                     englishName: 'Patrik', 
-                    vietnameseName: 'Thái'
+                    vietnameseName: 'Thái',
+                    department: DEPARTMENT.DEV,
+                    gender: GENDER.MALE
                 })
             ];
-            localStorage.setItem('employees', JSON.stringify(this.employees));
+            localStorage.setItem('employees', JSON.stringify(employees));
         }
-        this.employees = employees;
+        this.setEmployees(employees);
     }
 
     employee = new Employee({});
 
+    employees = [];
+
+    isDetailModal = false;
+    
     setEmployee(employee) {
         this.employee = employee;
     }
-
+    
     setEmployees(employees) {
         this.employees = employees;
+    }
+
+    setDetailModal(isDetailModal) {
+        this.isDetailModal = isDetailModal;
+    }
+
+    get totalManager() {
+        return _.reduce(this.employees, (acc, cur) => cur.manager ? acc + 1 : acc, 0);
     }
 
 }
 
 decorate(EmployeeStore, {
+    employee: observable,
     employees: observable,
+    isDetailModal: observable,
     setEmployee: action,
-    setEmployees: action
+    setEmployees: action,
+    setDetailModal: action,
+    totalManager: computed
 })

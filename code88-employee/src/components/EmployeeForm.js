@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import { inject } from 'mobx-react';
-import _ from 'lodash';
-import Employee from '../classes/Employee';
 import { DEPARTMENT, GENDER, STATUS } from '../constants/EmployeeConstant';
+import { observer } from 'mobx-react';
 
 class EmployeeForm extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            employee: new Employee({})
-        }
-    }
-
     changeValue = (event) => {
-        let { employee } = this.state;
         let { store } = this.props;
+        let { employee } = store;
         const target = event.target;
         const name = target.name;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -24,39 +16,10 @@ class EmployeeForm extends Component {
         store.setEmployee(employee);
     }
 
-    renderDepartment = () => {
-        return _.map(DEPARTMENT, value => {
-            return <option key={value.KEY} value={value.KEY}>{value.VALUE}</option>
-        });
-    }
-
-    renderGender = () => {
-        return _.map(GENDER, value => {
-            return <option key={value.KEY} value={value.KEY}>{value.VALUE}</option>
-        });
-    }
-
-    renderStatus = () => {
-        return _.map(STATUS, value => {
-            return (
-                <div key={value.KEY} className="form-check-inline">
-                    <label className="form-check-label">
-                        <input 
-                            type="radio" 
-                            className="form-check-input" 
-                            name="status"
-                            value={value.KEY}
-                            onChange={this.changeValue}
-                            checked={this.state.employee.status === value.KEY} />
-                            {value.VALUE}
-                    </label>
-                </div>
-            );
-        });
-    }
-
     render() {
-        const { englishName, vietnameseName, department, gender, discription, manager } = this.state.employee;
+        const { store } = this.props;
+        const { isDetailModal } = store;
+        const { englishName, vietnameseName, department, gender, discription, status, manager } = store.employee;
         return (
             <div>
                 <div className="row">
@@ -67,7 +30,9 @@ class EmployeeForm extends Component {
                             type="text" 
                             name="englishName"
                             value={englishName}
-                            onChange={this.changeValue} />
+                            onChange={this.changeValue}
+                            disabled={isDetailModal}
+                        />
                     </div>
                     <div className="form-group col-md-3">
                         <label>Vietnamese Name</label>
@@ -76,7 +41,9 @@ class EmployeeForm extends Component {
                             type="text" 
                             name="vietnameseName"
                             value={vietnameseName}
-                            onChange={this.changeValue} />
+                            onChange={this.changeValue} 
+                            disabled={isDetailModal}
+                        />
                     </div>
                     <div className="form-group col-md-3">
                         <label>Department</label>
@@ -85,8 +52,14 @@ class EmployeeForm extends Component {
                             name="department"
                             value={department}
                             onChange={this.changeValue}
+                            disabled={isDetailModal}
                         >
-                            {this.renderDepartment()}
+                            <option value={DEPARTMENT.ALL}>All</option>
+                            <option value={DEPARTMENT.DEV}>Developer</option>
+                            <option value={DEPARTMENT.HR}>Human Resource</option>
+                            <option value={DEPARTMENT.IT}>Information Technology</option>
+                            <option value={DEPARTMENT.QA}>Quality Assurance</option>
+                            <option value={DEPARTMENT.SA}>Solution Architech</option>
                         </select>
                     </div>
                     <div className="form-group col-md-3">
@@ -96,8 +69,11 @@ class EmployeeForm extends Component {
                             name="gender"
                             value={gender}
                             onChange={this.changeValue}
+                            disabled={isDetailModal}
                         >
-                            {this.renderGender()}    
+                            <option value={GENDER.ALL}>All</option>
+                            <option value={GENDER.FEMALE}>Female</option>
+                            <option value={GENDER.MALE}>Male</option>
                         </select>
                     </div>
                 </div>
@@ -107,12 +83,41 @@ class EmployeeForm extends Component {
                         className="form-control" 
                         name="discription"
                         value={discription}
-                        onChange={this.changeValue} />
+                        onChange={this.changeValue}
+                        disabled={isDetailModal}
+                    />
                 </div>
                 <div className="form-group">
                     <label>Status</label>
                     <div>
-                        {this.renderStatus()}
+                        <div className="form-check-inline">
+                            <label className="form-check-label">
+                                <input 
+                                    type="radio" 
+                                    className="form-check-input" 
+                                    name="status"
+                                    value={STATUS.ACTIVE}
+                                    onChange={this.changeValue}
+                                    checked={status === STATUS.ACTIVE}
+                                    disabled={isDetailModal}
+                                />
+                                    Active
+                            </label>
+                        </div>
+                        <div className="form-check-inline">
+                            <label className="form-check-label">
+                                <input 
+                                    type="radio" 
+                                    className="form-check-input" 
+                                    name="status"
+                                    value={STATUS.INACTIVE}
+                                    onChange={this.changeValue}
+                                    checked={status === STATUS.INACTIVE}
+                                    disabled={isDetailModal}
+                                />
+                                    Inactive
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div className="form-group">
@@ -123,7 +128,9 @@ class EmployeeForm extends Component {
                                 className="form-check-input" 
                                 name="manager"
                                 onChange={this.changeValue}
-                                checked={manager} />
+                                checked={manager}
+                                disabled={isDetailModal}
+                            />
                                 Manager
                         </label>
                     </div>
@@ -133,4 +140,4 @@ class EmployeeForm extends Component {
     }
 }
 
-export default inject('store') (EmployeeForm);
+export default inject('store') (observer(EmployeeForm));

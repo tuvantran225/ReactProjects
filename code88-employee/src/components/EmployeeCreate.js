@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { inject } from 'mobx-react';
 import $ from 'jquery';
 import EmployeeForm from './EmployeeForm';
+import Employee from '../classes/Employee';
 
 class EmployeeCreate extends Component {
 
@@ -13,6 +14,7 @@ class EmployeeCreate extends Component {
         store.setEmployees(employees);
         localStorage.setItem('employees', JSON.stringify(employees));
         $('#employee-form').modal('hide');
+        store.setEmployee(new Employee({}));
     }
 
     render() {

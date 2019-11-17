@@ -1,11 +1,15 @@
-.table a.table-link.info {
+.rt-table a.table-link.info {
     color: #17a2b8;
 }
 
-.table a.table-link.warning {
+.rt-table a.table-link.warning {
     color: #ffc107;
 }
 
-.table a.table-link.danger {
+.rt-table a.table-link.danger {
     color: #dc3545;
+}
+
+.rt-table .rt-tbody .rt-tr-group .rt-tr .rt-td.status {
+    text-align: center;
 }

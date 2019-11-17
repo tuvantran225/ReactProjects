@@ -4,54 +4,53 @@ export const FORM_TYPE = {
 };
 
 export const DEPARTMENT = {
-    ALL: {
-        KEY: '',
-        VALUE: 'All'
-    },
-    DEV: {
-        KEY: 'DEV',
-        VALUE: 'Developer'
-    },
-    QA: {
-        KEY: 'QA',
-        VALUE: 'Quality Assurance'
-    },
-    IT: {
-        KEY: 'IT',
-        VALUE: 'Information Technogory'
-    },
-    SA: {
-        KEY: 'SA',
-        VALUE: 'Solution Architech'
-    },
-    HR: {
-        KEY: 'HR',
-        VALUE: 'Human Resource'
-    }
+    ALL: '',
+    DEV: 'DEV',
+    QA: 'QA',
+    IT: 'IT',
+    SA: 'SA',
+    HR: 'HR'
 };
 
 export const GENDER = {
-    ALL: {
-        KEY: '',
-        VALUE: 'All'
-    },
-    MALE: {
-        KEY: 'MALE',
-        VALUE: 'Male'
-    },
-    FEMALE: {
-        KEY: 'FEMALE',
-        VALUE: 'Female'
-    }
+    ALL: '',
+    MALE: 'MALE',
+    FEMALE: 'FEMALE'
 };
 
 export const STATUS = {
-    ACTIVE: {
-        KEY: 'ACTIVE',
-        VALUE: 'Active'
-    },
-    INACTIVE: {
-        KEY: 'INACTIVE',
-        VALUE: 'Inactive'
-    }
+    ACTIVE: 'ACTIVE',
+    INACTIVE: 'INACTIVE'
 };
+
+export const TABLE_HEADER = {
+    ENGLISH_NAME: {
+        TEXT: 'English Name',
+        ACCESSOR: 'englishName'
+    },
+    VIETNAMESE_NAME: {
+        TEXT: 'Vietnamese Name',
+        ACCESSOR: 'vietnameseName'
+    },
+    DEPARTMENT: {
+        TEXT: 'Department',
+        ACCESSOR: 'department'
+    },
+    GENDER: {
+        TEXT: 'Gender',
+        ACCESSOR: 'gender'
+    },
+    STATUS: {
+        TEXT: 'Status',
+        ACCESSOR: 'status'
+    },
+    IS_MANAGER: {
+        TEXT: 'Is Manager',
+        ACCESSOR: 'manager'
+    },
+    ACTION: {
+        TEXT: 'Action',
+        ACCESSOR: 'action'
+    }
+}
+
