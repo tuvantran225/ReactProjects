@@ -8,7 +8,12 @@ import { STATUS, TABLE_HEADER } from '../constants/EmployeeConstant';
 
 class EmployeeList extends Component {
 
-  detailEmployee = (row) => {
+  constructor(props) {
+    super(props);
+    this.detailEmployee = this.detailEmployee.bind(this);
+  }
+
+  detailEmployee(row) {
     const { store } = this.props;
     const employee = {
       englishName: row.englishName,
@@ -19,8 +24,7 @@ class EmployeeList extends Component {
       status: row.status,
       manager: row.manager
     };
-    store.setEmployee(employee);
-    store.setDetailModal(true);
+    store.setModal(employee, true);
     $('#employee-form').modal('show');
   }
 
@@ -151,13 +155,12 @@ class EmployeeList extends Component {
   }
 
   render() {
-    
+    const { employees } = this.props.store;
     return (
       <ReactTable 
         columns={this.renderTableHeader()}
-        data={this.props.store.employees}
+        data={employees}
       />
-      // this.renderTable()  
     );
 
   }

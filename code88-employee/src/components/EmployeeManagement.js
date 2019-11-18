@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EmployeeSearch from './EmployeeSearch';
-import EmployeeCreate from './EmployeeCreate';
+import EmployeeModal from './EmployeeModal';
 import EmployeeList from './EmployeeList';
 
 class EmployeeManagement extends Component {
@@ -15,7 +15,7 @@ class EmployeeManagement extends Component {
                         </div>
                         <div className="card-body">
                             <EmployeeSearch />
-                            <EmployeeCreate />
+                            <EmployeeModal />
                             <EmployeeList />
                         </div>
                     </div>

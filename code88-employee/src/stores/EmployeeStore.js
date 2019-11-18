@@ -33,22 +33,20 @@ export default class EmployeeStore {
         this.setEmployees(employees);
     }
 
-    employee = new Employee({});
+    modal = {
+        employee: new Employee({}),
+        isDetails: false
+    };
 
     employees = [];
-
-    isDetailModal = false;
     
-    setEmployee(employee) {
-        this.employee = employee;
+    setModal(employee, isDetails) {
+        this.modal.employee = employee;
+        this.modal.isDetails = isDetails;
     }
     
     setEmployees(employees) {
         this.employees = employees;
-    }
-
-    setDetailModal(isDetailModal) {
-        this.isDetailModal = isDetailModal;
     }
 
     get totalManager() {
@@ -58,11 +56,9 @@ export default class EmployeeStore {
 }
 
 decorate(EmployeeStore, {
-    employee: observable,
+    modal: observable,
     employees: observable,
-    isDetailModal: observable,
-    setEmployee: action,
+    setModal: action,
     setEmployees: action,
-    setDetailModal: action,
     totalManager: computed
 })
