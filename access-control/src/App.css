@@ -1,0 +1,27 @@
+#left-card, #right-card {
+  border: 1px solid;
+  height: 50rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.card-header {
+  height: 8rem;
+  border-top-left-radius: 2rem !important;
+  border-top-right-radius: 2rem !important;
+}
+
+.card-header .card-title {
+  font-size: 1.5rem;
+}
+
+#left-group {
+  border: 1px solid;
+  height: 40rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card-header li.nav-item {
+  cursor: pointer;
+}
